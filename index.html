@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Hukum Dasar Kimia — Pendahuluan</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Karla:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FFF8F0;--surface:#FFFFFF;--surface2:#FFF1E4;--surface3:#FEE9D4;
+  --orange:#E8580A;--orange-dim:#F97316;--orange-light:#7C2D0A;
+  --yellow:#B45309;--cream:#78350F;
+  --text:#292524;--muted:#78716C;--border:rgba(234,88,12,0.18);
+  --border-sub:rgba(234,88,12,0.09);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Karla',sans-serif;font-size:16px;line-height:1.8;overflow-x:hidden}
+
+/* ── HEADER ── */
+header{
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;padding:5rem 2rem 4rem;position:relative;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%,#FDDCB8 0%,transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 80%,#FDE9CC 0%,transparent 60%),
+    var(--bg);
+  border-bottom:1px solid var(--border);
+  overflow:hidden;
+}
+header::before{
+  content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:700px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--orange),transparent);
+}
+/* Decorative ring */
+.deco-ring{
+  position:absolute;width:500px;height:500px;border-radius:50%;
+  border:1px solid rgba(234,88,12,0.12);top:50%;left:50%;
+  transform:translate(-50%,-50%);pointer-events:none;
+}
+.deco-ring-2{
+  position:absolute;width:340px;height:340px;border-radius:50%;
+  border:1px solid rgba(234,88,12,0.18);top:50%;left:50%;
+  transform:translate(-50%,-50%);pointer-events:none;
+}
+.deco-ring-3{
+  position:absolute;width:700px;height:700px;border-radius:50%;
+  border:1px dashed rgba(234,88,12,0.07);top:50%;left:50%;
+  transform:translate(-50%,-50%);pointer-events:none;
+}
+
+.header-eyebrow{
+  font-size:11px;letter-spacing:6px;text-transform:uppercase;
+  color:var(--orange);margin-bottom:1.5rem;position:relative;z-index:1;
+}
+.header-label{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.25);
+  border-radius:30px;padding:5px 18px 5px 14px;margin-bottom:2rem;
+  font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--orange);
+  position:relative;z-index:1;
+}
+.header-label-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+header h1{
+  font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,8vw,5.5rem);
+  font-weight:700;color:#1C0A00;line-height:1.1;margin-bottom:1.25rem;
+  position:relative;z-index:1;
+}
+header h1 em{color:var(--orange);font-style:italic}
+header h1 span{color:var(--orange-light)}
+.header-sub{
+  max-width:520px;color:var(--muted);font-size:.95rem;line-height:1.7;
+  margin-bottom:2.5rem;position:relative;z-index:1;
+}
+.orule{width:50px;height:1px;background:var(--orange);margin:0 auto 2.5rem;opacity:.7;position:relative;z-index:1;}
+
+/* Scroll cue */
+.scroll-cue{
+  position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;
+  gap:8px;color:var(--muted);font-size:.75rem;letter-spacing:2px;text-transform:uppercase;margin-top:1rem;
+}
+.scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,var(--orange),transparent);}
+
+/* ── NAV KONTEKS ── */
+.nav-strip{
+  background:var(--surface);border-bottom:1px solid var(--border);
+  padding:.85rem 2rem;display:flex;align-items:center;gap:2rem;
+  overflow-x:auto;position:sticky;top:0;z-index:100;
+}
+.nav-strip::-webkit-scrollbar{height:0}
+.nav-item{
+  font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);
+  white-space:nowrap;cursor:default;
+}
+.nav-item.active{color:var(--orange)}
+.nav-sep{color:var(--border);flex-shrink:0}
+
+/* ── LAYOUT ── */
+.container{max-width:900px;margin:0 auto;padding:4rem 2rem}
+.stag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:.4rem}
+h2{
+  font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;color:#1C0A00;
+  margin-bottom:1.25rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);
+}
+h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#1C0A00;margin-bottom:.5rem}
+p{margin-bottom:1rem;color:var(--text)}
+hr{border:none;border-top:1px solid var(--border);margin:3rem 0}
+
+/* ── INTRO BLOK ── */
+.intro-lead{
+  font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-style:italic;
+  color:var(--orange-light);line-height:1.65;margin-bottom:1.5rem;
+}
+.def-box{
+  background:var(--surface);border:1px solid var(--border);
+  border-left:4px solid var(--orange);border-radius:6px;
+  padding:1.75rem 2rem;margin-bottom:2rem;
+}
+.highlight-box{
+  background:rgba(234,88,12,0.07);border-left:3px solid var(--orange);
+  padding:.85rem 1rem;border-radius:0 4px 4px 0;margin:1rem 0;
+}
+.highlight-box em{color:var(--orange-light);font-style:italic}
+
+/* ── TIMELINE (sejarah singkat) ── */
+.tline{position:relative;margin-bottom:3rem}
+.tline::before{
+  content:'';position:absolute;left:15px;top:0;bottom:0;
+  width:1px;background:var(--border);
+}
+.ti{display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start}
+.ti-dot{
+  width:32px;height:32px;border-radius:50%;flex-shrink:0;
+  background:var(--orange);border:2px solid var(--orange-dim);
+  color:#fff;font-size:.68rem;font-weight:500;
+  display:flex;align-items:center;justify-content:center;z-index:1;position:relative;
+}
+.ti strong{display:block;color:#1C0A00;font-size:.95rem;font-family:'Cormorant Garamond',serif;font-weight:600}
+.ti span{font-size:.88rem;color:var(--muted)}
+
+/* ── 5 HUKUM CARDS ── */
+.laws-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:1.25rem;margin-bottom:3rem;
+}
+.law-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:8px;
+  padding:1.5rem;position:relative;overflow:hidden;
+  transition:border-color .25s,transform .25s;
+  box-shadow:0 2px 12px rgba(234,88,12,0.06);
+}
+.law-card:hover{border-color:var(--orange);transform:translateY(-3px);box-shadow:0 8px 24px rgba(234,88,12,0.12)}
+.law-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--orange-dim),var(--orange));
+  opacity:0;transition:opacity .25s;
+}
+.law-card:hover::before{opacity:1}
+.law-num{
+  font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;
+  color:rgba(234,88,12,0.10);position:absolute;top:.5rem;right:1rem;line-height:1;
+  pointer-events:none;
+}
+.law-tag{
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--orange);margin-bottom:.5rem;display:block;
+}
+.law-card h3{font-size:1.05rem;margin-bottom:.25rem;color:#1C0A00}
+.law-card .law-scientist{font-size:.78rem;color:var(--muted);margin-bottom:.75rem}
+.law-card p{font-size:.875rem;color:var(--muted);margin-bottom:0;line-height:1.6}
+.law-formula{
+  margin-top:.9rem;padding:.5rem .75rem;background:rgba(234,88,12,0.07);
+  border-radius:4px;font-family:'Cormorant Garamond',serif;
+  font-size:.95rem;color:var(--orange-light);font-weight:600;
+}
+
+/* ── KENAPA PENTING ── */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-bottom:3rem}
+.why-card{
+  background:var(--surface2);border:1px solid var(--border-sub);
+  border-radius:6px;padding:1.25rem;
+}
+.why-icon{font-size:1.6rem;margin-bottom:.6rem;display:block}
+.why-card h4{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:#1C0A00;margin-bottom:.4rem}
+.why-card p{font-size:.84rem;color:var(--muted);margin:0;line-height:1.6}
+
+/* ── KONSEP DASAR TABLE ── */
+.concept-table{width:100%;border-collapse:collapse;margin-bottom:3rem}
+.concept-table th{
+  background:rgba(234,88,12,0.10);color:var(--orange);
+  font-size:.78rem;letter-spacing:2px;text-transform:uppercase;
+  padding:.7rem 1rem;text-align:left;border-bottom:1px solid var(--border);
+}
+.concept-table td{
+  padding:.75rem 1rem;border-bottom:1px solid var(--border-sub);
+  color:var(--text);font-size:.9rem;vertical-align:top;
+}
+.concept-table tr:last-child td{border-bottom:none}
+.concept-table .hl{color:var(--orange);font-weight:500}
+.concept-table tr:hover td{background:rgba(234,88,12,0.04)}
+
+/* ── BLOCKQUOTE ── */
+blockquote{
+  border-left:3px solid var(--orange);padding:.9rem 1.25rem;
+  background:rgba(234,88,12,0.06);border-radius:0 6px 6px 0;
+  margin:0 0 3rem;
+}
+blockquote p{
+  font-family:'Cormorant Garamond',serif;font-size:1.1rem;
+  color:var(--orange-light);font-style:italic;margin:0;
+}
+blockquote cite{display:block;margin-top:.5rem;font-size:.78rem;color:var(--muted);font-style:normal}
+
+/* ── SUMLIST ── */
+.sumlist{list-style:none;padding:0;margin-bottom:2rem}
+.sumlist li{
+  padding:.6rem 0 .6rem 1.5rem;border-bottom:1px solid var(--border-sub);
+  position:relative;color:var(--text);font-size:.95rem;
+}
+.sumlist li::before{content:'›';position:absolute;left:0;color:var(--orange);font-weight:700}
+.sumlist li strong{color:#1C0A00}
+
+/* ── PETA KONSEP SEDERHANA ── */
+.map-wrap{
+  background:var(--surface);border:1px solid var(--border);border-radius:8px;
+  padding:2rem;margin-bottom:3rem;overflow-x:auto;
+}
+.map-title{
+  font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;
+  color:#1C0A00;margin-bottom:1.5rem;text-align:center;
+}
+.map-flow{display:flex;flex-direction:column;align-items:center;gap:0}
+.map-center{
+  background:linear-gradient(135deg,var(--orange),var(--orange-dim));
+  border:2px solid var(--orange-dim);border-radius:8px;
+  padding:.85rem 2rem;color:#fff;font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem;font-weight:700;text-align:center;
+  box-shadow:0 4px 20px rgba(234,88,12,0.25);
+}
+.map-arrow{color:var(--orange);font-size:1.2rem;line-height:1;padding:.3rem 0}
+.map-branches{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:.75rem;width:100%;
+}
+.map-branch{
+  background:var(--surface2);border:1px solid var(--border);border-radius:6px;
+  padding:.75rem 1rem;text-align:center;
+}
+.map-branch .mb-num{
+  font-size:.7rem;letter-spacing:2px;text-transform:uppercase;
+  color:var(--orange);margin-bottom:.25rem;display:block;
+}
+.map-branch .mb-name{font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:#1C0A00;line-height:1.3}
+.map-branch .mb-who{font-size:.72rem;color:var(--muted);margin-top:3px}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--surface3);border-top:1px solid var(--border);
+  text-align:center;padding:1.5rem;font-size:.85rem;color:var(--muted);
+}
+footer span{color:var(--orange)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
+  .laws-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:400px){
+  .why-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="deco-ring"></div>
+  <div class="deco-ring-2"></div>
+  <div class="deco-ring-3"></div>
+
+  <div class="header-label">
+    <span class="header-label-dot"></span>
+    Materi Kimia Kelas X
+  </div>
+  <p class="header-eyebrow">Pengantar · Fondasi Ilmu Kimia Modern</p>
+  <h1>Hukum Dasar<br/><em>Kimia</em></h1>
+  <div class="orule"></div>
+  <p class="header-sub">Lima hukum fundamental yang menjadi landasan ilmu kimia kuantitatif modern — dari kekekalan massa hingga hipotesis Avogadro.</p>
+  <div class="scroll-cue">
+    <div class="scroll-line"></div>
+    <span>Gulir ke bawah</span>
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<nav class="nav-strip">
+  <span class="nav-item active">Pendahuluan</span>
+  <span class="nav-sep">·</span>
+  <span class="nav-item">Sejarah</span>
+  <span class="nav-sep">·</span>
+  <span class="nav-item">Lima Hukum</span>
+  <span class="nav-sep">·</span>
+  <span class="nav-item">Konsep Dasar</span>
+  <span class="nav-sep">·</span>
+  <span class="nav-item">Rangkuman</span>
+</nav>
+
+<div class="container">
+
+  <!-- INTRO -->
+  <section style="margin-bottom:3rem">
+    <p class="stag">Pendahuluan</p>
+    <h2>Mengapa Hukum Dasar Kimia Penting?</h2>
+
+    <p class="intro-lead">"Sebelum kita dapat memahami bagaimana zat berubah, kita harus terlebih dahulu memahami aturan yang mengatur perubahan itu."</p>
+
+    <p>Kimia adalah ilmu yang mempelajari materi dan perubahannya. Namun sebelum era abad ke-18, kimia lebih bersifat deskriptif — menggambarkan apa yang terjadi tanpa mampu menjelaskan <em>mengapa</em> dan <em>berapa banyak</em>. Segalanya berubah ketika serangkaian ilmuwan brilian mulai mengukur massa, volume, dan komposisi zat secara teliti dan sistematis.</p>
+
+    <div class="def-box">
+      <p><strong style="color:#1C0A00">Hukum Dasar Kimia</strong> adalah sekumpulan prinsip empiris yang dihasilkan dari eksperimen cermat pada abad ke-18 dan ke-19. Hukum-hukum ini menjelaskan bagaimana unsur-unsur bergabung membentuk senyawa, bagaimana massa dipertahankan dalam reaksi, dan bagaimana volume gas berhubungan dengan jumlah partikel.</p>
+      <div class="highlight-box">
+        <em>Kelima hukum ini bersama-sama menjadi bukti empiris pertama bahwa materi tersusun dari partikel-partikel diskret yang tidak dapat diciptakan maupun dimusnahkan — pondasi teori atom modern.</em>
+      </div>
+    </div>
+
+    <p>Tanpa hukum-hukum ini, tidak ada stoikiometri, tidak ada perhitungan kimia kuantitatif, dan tidak ada industri kimia modern. Mulai dari pembuatan pupuk hingga farmasi, semuanya berpijak pada prinsip-prinsip fundamental yang kita pelajari di sini.</p>
+  </section>
+
+  <hr/>
+
+  <!-- SEJARAH -->
+  <section style="margin-bottom:3rem">
+    <p class="stag">Linimasa Penemuan</p>
+    <h2>Perjalanan Sejarah Singkat</h2>
+    <p>Dalam kurun waktu hanya sekitar 25 tahun (1789–1811), lima hukum dasar kimia ditemukan oleh empat ilmuwan dari tiga negara berbeda — sebuah lonjakan luar biasa dalam sejarah sains.</p>
+
+    <div class="tline">
+      <div class="ti">
+        <div class="ti-dot">1789</div>
+        <div>
+          <strong>Lavoisier — Hukum Kekekalan Massa</strong>
+          <span>Antoine Lavoisier (Prancis) membuktikan melalui eksperimen timbangan presisi bahwa massa total zat sebelum dan sesudah reaksi kimia selalu sama. Ini meruntuhkan teori flogiston yang dominan saat itu.</span>
+        </div>
+      </div>
+      <div class="ti">
+        <div class="ti-dot">1799</div>
+        <div>
+          <strong>Proust — Hukum Perbandingan Tetap</strong>
+          <span>Joseph Louis Proust (Prancis) menunjukkan bahwa komposisi senyawa kimia murni selalu tetap, tidak peduli dari mana atau bagaimana senyawa itu dibuat — membuktikan bahwa senyawa bukan sekadar campuran sembarang.</span>
+        </div>
+      </div>
+      <div class="ti">
+        <div class="ti-dot">1803</div>
+        <div>
+          <strong>Dalton — Hukum Perbandingan Berganda</strong>
+          <span>John Dalton (Inggris) menemukan bahwa ketika dua unsur membentuk lebih dari satu senyawa, perbandingan massanya selalu merupakan bilangan bulat sederhana — bukti langsung bahwa atom bergabung dalam unit diskret.</span>
+        </div>
+      </div>
+      <div class="ti">
+        <div class="ti-dot">1808</div>
+        <div>
+          <strong>Gay-Lussac — Hukum Perbandingan Volume</strong>
+          <span>Joseph Gay-Lussac (Prancis) menemukan bahwa gas-gas bereaksi dan menghasilkan gas dalam perbandingan volume bilangan bulat sederhana pada suhu dan tekanan yang sama — memperluas hukum Dalton ke ranah gas.</span>
+        </div>
+      </div>
+      <div class="ti">
+        <div class="ti-dot">1811</div>
+        <div>
+          <strong>Avogadro — Hipotesis Avogadro</strong>
+          <span>Amedeo Avogadro (Italia) menyempurnakan pemahaman Gay-Lussac dengan menyatakan bahwa pada T dan P yang sama, volume gas yang sama mengandung jumlah molekul yang sama — fondasi konsep mol dan bilangan Avogadro.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PETA KONSEP -->
+  <div class="map-wrap">
+    <p class="map-title">Peta Konsep — Lima Hukum Dasar Kimia</p>
+    <div class="map-flow">
+      <div class="map-center">⚗️ &nbsp;Hukum Dasar Kimia</div>
+      <div class="map-arrow">↓</div>
+      <div class="map-branches">
+        <div class="map-branch">
+          <span class="mb-num">Hukum I</span>
+          <div class="mb-name">Kekekalan Massa</div>
+          <div class="mb-who">Lavoisier · 1789</div>
+        </div>
+        <div class="map-branch">
+          <span class="mb-num">Hukum II</span>
+          <div class="mb-name">Perbandingan Tetap</div>
+          <div class="mb-who">Proust · 1799</div>
+        </div>
+        <div class="map-branch">
+          <span class="mb-num">Hukum III</span>
+          <div class="mb-name">Perbandingan Berganda</div>
+          <div class="mb-who">Dalton · 1803</div>
+        </div>
+        <div class="map-branch">
+          <span class="mb-num">Hukum IV</span>
+          <div class="mb-name">Perbandingan Volume</div>
+          <div class="mb-who">Gay-Lussac · 1808</div>
+        </div>
+        <div class="map-branch">
+          <span class="mb-num">Hipotesis</span>
+          <div class="mb-name">Avogadro</div>
+          <div class="mb-who">Avogadro · 1811</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <!-- LIMA HUKUM OVERVIEW -->
+  <section style="margin-bottom:3rem">
+    <p class="stag">Lima Hukum Utama</p>
+    <h2>Ringkasan Setiap Hukum</h2>
+    <p>Berikut adalah gambaran singkat kelima hukum dasar kimia yang akan dipelajari secara mendalam pada topik-topik berikutnya.</p>
+
+    <div class="laws-grid">
+
+      <div class="law-card">
+        <span class="law-num">I</span>
+        <span class="law-tag">Hukum Pertama</span>
+        <h3>Kekekalan Massa</h3>
+        <p class="law-scientist">Antoine Lavoisier · 1789</p>
+        <p>Massa zat-zat sebelum reaksi kimia sama dengan massa zat-zat sesudah reaksi kimia dalam sistem tertutup.</p>
+        <div class="law-formula">m reaktan = m produk</div>
+      </div>
+
+      <div class="law-card">
+        <span class="law-num">II</span>
+        <span class="law-tag">Hukum Kedua</span>
+        <h3>Perbandingan Tetap</h3>
+        <p class="law-scientist">Joseph Proust · 1799</p>
+        <p>Perbandingan massa unsur-unsur dalam suatu senyawa murni selalu tetap dan tidak bergantung pada cara pembuatannya.</p>
+        <div class="law-formula">m A : m B = tetap</div>
+      </div>
+
+      <div class="law-card">
+        <span class="law-num">III</span>
+        <span class="law-tag">Hukum Ketiga</span>
+        <h3>Perbandingan Berganda</h3>
+        <p class="law-scientist">John Dalton · 1803</p>
+        <p>Jika dua unsur membentuk lebih dari satu senyawa, perbandingan massa salah satu unsur merupakan bilangan bulat sederhana.</p>
+        <div class="law-formula">m₁ : m₂ = bilangan bulat</div>
+      </div>
+
+      <div class="law-card">
+        <span class="law-num">IV</span>
+        <span class="law-tag">Hukum Keempat</span>
+        <h3>Perbandingan Volume</h3>
+        <p class="law-scientist">Gay-Lussac · 1808</p>
+        <p>Pada T dan P yang sama, volume gas yang bereaksi dan dihasilkan berbanding sebagai bilangan bulat sederhana.</p>
+        <div class="law-formula">V₁ : V₂ : V₃ = bulat</div>
+      </div>
+
+      <div class="law-card">
+        <span class="law-num">H</span>
+        <span class="law-tag">Hipotesis</span>
+        <h3>Avogadro</h3>
+        <p class="law-scientist">Amedeo Avogadro · 1811</p>
+        <p>Pada T dan P yang sama, gas-gas yang volumenya sama mengandung jumlah molekul yang sama, apapun jenis gasnya.</p>
+        <div class="law-formula">V sama → n molekul sama</div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr/>
+
+  <!-- KONSEP DASAR -->
+  <section style="margin-bottom:3rem">
+    <p class="stag">Konsep Prasyarat</p>
+    <h2>Yang Perlu Kamu Ketahui Terlebih Dahulu</h2>
+    <p>Sebelum mempelajari kelima hukum ini secara mendalam, ada beberapa konsep dasar yang perlu dipahami dengan baik.</p>
+
+    <table class="concept-table">
+      <thead>
+        <tr>
+          <th>Konsep</th>
+          <th>Definisi Singkat</th>
+          <th>Relevansi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="hl">Unsur</td>
+          <td>Zat murni yang tidak dapat diuraikan lagi menjadi zat yang lebih sederhana melalui reaksi kimia biasa. Contoh: C, H, O, Na.</td>
+          <td>Dasar pembentukan semua senyawa dalam kelima hukum</td>
+        </tr>
+        <tr>
+          <td class="hl">Senyawa</td>
+          <td>Zat murni yang terbentuk dari dua atau lebih unsur berbeda yang bergabung secara kimia dengan perbandingan tertentu.</td>
+          <td>Objek utama dalam hukum Proust dan Dalton</td>
+        </tr>
+        <tr>
+          <td class="hl">Campuran</td>
+          <td>Gabungan dua atau lebih zat yang tidak terikat secara kimia; komposisinya dapat bervariasi.</td>
+          <td>Dibedakan dari senyawa untuk memahami hukum Proust</td>
+        </tr>
+        <tr>
+          <td class="hl">Massa & Mol</td>
+          <td>Massa adalah jumlah materi suatu zat; mol adalah satuan jumlah partikel (1 mol = 6,02 × 10²³ partikel).</td>
+          <td>Digunakan dalam semua perhitungan hukum dasar</td>
+        </tr>
+        <tr>
+          <td class="hl">Reaksi Kimia</td>
+          <td>Proses di mana zat asal (reaktan) berubah menjadi zat baru (produk) melalui pemutusan dan pembentukan ikatan.</td>
+          <td>Konteks berlakunya hukum kekekalan massa</td>
+        </tr>
+        <tr>
+          <td class="hl">Gas Ideal</td>
+          <td>Model gas yang diasumsikan memiliki partikel tanpa volume dan tanpa interaksi antarmolekul.</td>
+          <td>Dasar berlakunya hukum Gay-Lussac dan hipotesis Avogadro</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- KENAPA PENTING -->
+  <section style="margin-bottom:3rem">
+    <p class="stag">Relevansi Modern</p>
+    <h2>Mengapa Ini Masih Relevan Hari Ini?</h2>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">🏭</span>
+        <h4>Industri Kimia</h4>
+        <p>Semua perhitungan produksi senyawa kimia — pupuk, plastik, obat-obatan — menggunakan stoikiometri yang berpijak pada kelima hukum ini.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">💊</span>
+        <h4>Farmasi</h4>
+        <p>Formulasi dosis obat yang tepat bergantung pada pemahaman komposisi senyawa (hukum Proust) dan reaksi kimia (kekekalan massa).</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🌱</span>
+        <h4>Lingkungan</h4>
+        <p>Pemodelan polusi udara dan emisi gas rumah kaca menggunakan hukum Gay-Lussac dan hipotesis Avogadro untuk menghitung volume gas.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">⚗️</span>
+        <h4>Penelitian</h4>
+        <p>Setiap sintesis senyawa baru di laboratorium didesain menggunakan prinsip-prinsip hukum dasar kimia sebagai panduan kuantitatif.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🔋</span>
+        <h4>Energi</h4>
+        <p>Pengembangan baterai, sel bahan bakar, dan energi terbarukan melibatkan reaksi kimia yang mengikuti hukum kekekalan massa secara ketat.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🧬</span>
+        <h4>Biokimia</h4>
+        <p>Metabolisme tubuh manusia — pembakaran glukosa, sintesis protein — semuanya mengikuti hukum-hukum dasar kimia ini.</p>
+      </div>
+    </div>
+  </section>
+
+  <blockquote>
+    <p>"Kimia tidak akan pernah menjadi ilmu sejati sampai dapat direpresentasikan dengan angka-angka dan direduksi pada perhitungan."</p>
+    <cite>— Antoine Lavoisier, bapak kimia modern</cite>
+  </blockquote>
+
+  <hr/>
+
+  <!-- RANGKUMAN -->
+  <section style="margin-bottom:2rem">
+    <p class="stag">Rangkuman</p>
+    <h2>Poin-Poin Kunci Pendahuluan</h2>
+
+    <ul class="sumlist">
+      <li><strong>Lima hukum dasar kimia</strong> adalah fondasi dari seluruh perhitungan kimia kuantitatif (stoikiometri).</li>
+      <li>Hukum-hukum ini ditemukan dalam rentang 1789–1811 oleh <strong>Lavoisier, Proust, Dalton, Gay-Lussac, dan Avogadro</strong>.</li>
+      <li>Setiap hukum merupakan hasil <strong>eksperimen kuantitatif</strong> — pengukuran massa dan volume yang sangat teliti.</li>
+      <li>Bersama-sama, kelima hukum ini memberikan <strong>bukti empiris</strong> pertama keberadaan atom sebagai partikel diskret.</li>
+      <li>Hukum-hukum ini berlaku <strong>universal</strong> — tidak bergantung pada skala, sumber bahan, atau lokasi laboratorium.</li>
+      <li>Pemahaman mendalam atas kelima hukum ini adalah <strong>prasyarat wajib</strong> sebelum mempelajari konsep mol, stoikiometri, dan termokimia.</li>
+    </ul>
+  </section>
+
+</div>
+
+<footer>
+  <p>Materi Kimia · <span>Hukum Dasar Kimia</span> · Pendahuluan</p>
+</footer>
+
+</body>
+</html>
